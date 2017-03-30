@@ -1,6 +1,8 @@
 #include "cocos2d.h"
 #include "GameSceneManager.h"
 #include "MainLayer.h"
+#include "RankBirdLayer.h"
+#include "RankFruitLayer.h"
 
 using namespace cocos2d;
 
@@ -38,11 +40,23 @@ void GameSceneManager::goToSetScene() {  // 切换到设置界面
 }
 
 void GameSceneManager::goToRankBirdScene() {  // 切换到"进击的小鸟"排行榜界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  rankScene = Scene::create();
+  RankBirdLayer* layer = RankBirdLayer::create();
+  rankScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionPageTurn::create(1, rankScene, false);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }
 
 void GameSceneManager::goToRankFruitScene() {  // 切换到"水果大逃亡"排行榜界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  rankScene = Scene::create();
+  RankFruitLayer* layer = RankFruitLayer::create();
+  rankScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionPageTurn::create(1, rankScene, false);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }
 
 void GameSceneManager::goToAboutScene() {  // 切换到关于界面

@@ -9,8 +9,8 @@
   - [x] MainLayer
   - [ ] HelpLayer
   - [ ] SetLayer
-  - [ ] RankBirdLayer
-  - [ ] RankFruitLayer
+  - [x] RankBirdLayer
+  - [x] RankFruitLayer
   - [ ] AboutLayer
   - [ ] GameLayer
   - [ ] BirdLayer
