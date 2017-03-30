@@ -4,6 +4,7 @@
 #include "RankBirdLayer.h"
 #include "RankFruitLayer.h"
 #include "SetLayer.h"
+#include "HelpLayer.h"
 
 using namespace cocos2d;
 
@@ -71,5 +72,11 @@ void GameSceneManager::goToAboutScene() {  // 切换到关于界面
 }
 
 void GameSceneManager::goToHelpScene() {  // 切换到帮助界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  helpScene = Scene::create();
+  HelpLayer* layer = HelpLayer::create();
+  helpScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionPageTurn::create(1, helpScene, false);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }

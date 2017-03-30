@@ -4,10 +4,18 @@
 ## 休闲类游戏--Fruit & Bird
 ![Fruit and Bird](https://github.com/icsfy/cocos2d-x_FruitandBird/raw/master/Resources/pic/title.png)
 
+## 游戏玩法
+<p align='center'>
+  <img src='Resources/pic/help0.png' height='400' width='225'/>
+  <img src='Resources/pic/help1.png' height='400' width='225'/>
+  <img src='Resources/pic/help2.png' height='400' width='225'/>
+  <img src='Resources/pic/help3.png' height='400' width='225'/>
+</p>
+
 ## 开发进度
   - [x] GameSceneManager
   - [x] MainLayer
-  - [ ] HelpLayer
+  - [x] HelpLayer
   - [x] SetLayer
   - [x] RankBirdLayer
   - [x] RankFruitLayer
