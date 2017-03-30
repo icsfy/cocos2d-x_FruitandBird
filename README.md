@@ -6,10 +6,10 @@
 
 ## 游戏玩法
 <p align='center'>
-  <img src='Resources/pic/help0.png' height='400' width='225'/>
-  <img src='Resources/pic/help1.png' height='400' width='225'/>
-  <img src='Resources/pic/help2.png' height='400' width='225'/>
-  <img src='Resources/pic/help3.png' height='400' width='225'/>
+  <img src='Resources/pic/help0.png' height='384' width='216'/>
+  <img src='Resources/pic/help1.png' height='384' width='216'/>
+  <img src='Resources/pic/help2.png' height='384' width='216'/>
+  <img src='Resources/pic/help3.png' height='384' width='216'/>
 </p>
 
 ## 开发进度
