@@ -3,6 +3,7 @@
 #include "MainLayer.h"
 #include "RankBirdLayer.h"
 #include "RankFruitLayer.h"
+#include "SetLayer.h"
 
 using namespace cocos2d;
 
@@ -36,7 +37,13 @@ void GameSceneManager::goToGameScene() {  // 切换到游戏选择界面
 }
 
 void GameSceneManager::goToSetScene() {  // 切换到设置界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  musicScene = Scene::create();
+  SetLayer* layer = SetLayer::create();
+  musicScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionPageTurn::create(1, musicScene, false);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }
 
 void GameSceneManager::goToRankBirdScene() {  // 切换到"进击的小鸟"排行榜界面

@@ -8,7 +8,7 @@
   - [x] GameSceneManager
   - [x] MainLayer
   - [ ] HelpLayer
-  - [ ] SetLayer
+  - [x] SetLayer
   - [x] RankBirdLayer
   - [x] RankFruitLayer
   - [ ] AboutLayer
