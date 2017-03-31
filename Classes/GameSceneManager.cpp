@@ -5,6 +5,7 @@
 #include "RankFruitLayer.h"
 #include "SetLayer.h"
 #include "HelpLayer.h"
+#include "AboutLayer.h"
 
 using namespace cocos2d;
 
@@ -68,7 +69,13 @@ void GameSceneManager::goToRankFruitScene() {  // 切换到"水果大逃亡"排�
 }
 
 void GameSceneManager::goToAboutScene() {  // 切换到关于界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  aboutScene = Scene::create();
+  AboutLayer* layer = AboutLayer::create();
+  aboutScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionPageTurn::create(1, aboutScene, false);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }
 
 void GameSceneManager::goToHelpScene() {  // 切换到帮助界面

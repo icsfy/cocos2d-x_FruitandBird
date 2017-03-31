@@ -19,7 +19,7 @@
   - [x] SetLayer
   - [x] RankBirdLayer
   - [x] RankFruitLayer
-  - [ ] AboutLayer
+  - [x] AboutLayer
   - [ ] GameLayer
   - [ ] BirdLayer
   - [ ] FruitLayer
