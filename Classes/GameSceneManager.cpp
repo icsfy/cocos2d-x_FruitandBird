@@ -6,6 +6,7 @@
 #include "SetLayer.h"
 #include "HelpLayer.h"
 #include "AboutLayer.h"
+#include "GameLayer.h"
 
 using namespace cocos2d;
 
@@ -35,7 +36,13 @@ void GameSceneManager::goToSquishyScene(int i) {  // 切换到"水果大逃亡"�
 }
 
 void GameSceneManager::goToGameScene() {  // 切换到游戏选择界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  gameScene = Scene::create();
+  GameLayer* layer = GameLayer::create();
+  gameScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionPageTurn::create(1, gameScene, false);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }
 
 void GameSceneManager::goToSetScene() {  // 切换到设置界面

@@ -20,6 +20,6 @@
   - [x] RankBirdLayer
   - [x] RankFruitLayer
   - [x] AboutLayer
-  - [ ] GameLayer
+  - [x] GameLayer
   - [ ] BirdLayer
   - [ ] FruitLayer
