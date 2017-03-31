@@ -7,6 +7,7 @@
 #include "HelpLayer.h"
 #include "AboutLayer.h"
 #include "GameLayer.h"
+#include "BirdLayer.h"
 
 using namespace cocos2d;
 
@@ -28,7 +29,15 @@ void GameSceneManager::goToMainScene() {  // 切换到主界面
 }
 
 void GameSceneManager::goToFlappyScene(int i) {  // 切换到"进击的小鸟"游戏界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  birdScene = Scene::create();
+  BirdLayer* layer = BirdLayer::create();
+  birdScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionFadeTR::create(1, birdScene);
+  if (i == 1)
+    auto ss = TransitionFade::create(1, birdScene);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }
 
 void GameSceneManager::goToSquishyScene(int i) {  // 切换到"水果大逃亡"游戏界面

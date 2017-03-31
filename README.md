@@ -21,5 +21,5 @@
   - [x] RankFruitLayer
   - [x] AboutLayer
   - [x] GameLayer
-  - [ ] BirdLayer
+  - [x] BirdLayer
   - [ ] FruitLayer
