@@ -258,11 +258,11 @@ void BirdLayer::replay() {
   this->addChild(overRank, 10);
 
   replayItem = MenuItemImage::create(  // 重新开始
-    "button/replay.png", "button/replay_off.png", CC_CALLBACK_1(BirdLayer::menuCallbackItem0, this));
+    "button/replay.png", "button/replay_off.png", CC_CALLBACK_1(BirdLayer::menuCallbackRestart, this));
   replayItem->setPosition(Vec2(150, -250));
 
   menuItem = MenuItemImage::create(  // 返回主菜单
-    "button/menu.png", "button/menu_off.png", CC_CALLBACK_1(BirdLayer::menuCallbackItem1, this));
+    "button/menu.png", "button/menu_off.png", CC_CALLBACK_1(BirdLayer::menuCallbackToMain, this));
   menuItem->setPosition(Vec2(380, -250));
 
   Menu* menu = Menu::create(replayItem, menuItem, NULL);
@@ -385,17 +385,17 @@ bool BirdLayer::onTouchPause(Touch* touch, Event* event) {
 
     MenuItemImage* conItem = MenuItemImage::create(  // 继续游戏
         "button/continue.png", "button/continue_off.png",
-        CC_CALLBACK_1(BirdLayer::menuCallbackItem3, this));
+        CC_CALLBACK_1(BirdLayer::menuCallbackResume, this));
     conItem->setPosition(Vec2(80, 80));
 
     MenuItemImage* backItem = MenuItemImage::create(  // 返回主菜单
       "button/menu.png", "button/menu_off.png",
-       CC_CALLBACK_1(BirdLayer::menuCallbackItem2, this));
+       CC_CALLBACK_1(BirdLayer::menuCallbackPauseToMain, this));
     backItem->setPosition(Vec2(225, 80));
 
     MenuItemImage* againItem = MenuItemImage::create(
       "button/replay.png", "button/replay_off.png",  // 重新开始
-       CC_CALLBACK_1(BirdLayer::menuCallbackItem4, this));
+       CC_CALLBACK_1(BirdLayer::menuCallbackPauseRestart, this));
     againItem->setPosition(Vec2(370, 80));
 
     Menu* menu = Menu::create(againItem, conItem, backItem, NULL);
@@ -408,27 +408,27 @@ bool BirdLayer::onTouchPause(Touch* touch, Event* event) {
   return false;
 }
 
-void BirdLayer::menuCallbackItem0(Ref* pSender) {  // 重新开始游戏
+void BirdLayer::menuCallbackRestart(Ref* pSender) {  // 重新开始游戏
   sceneManager->goToFlappyScene(1);  // 重新切换到游戏场景
 }
 
-void BirdLayer::menuCallbackItem1(Ref* pSender) {  // 切换到主菜单场景
+void BirdLayer::menuCallbackToMain(Ref* pSender) {  // 切换到主菜单场景
   sceneManager->goToMainScene();  // 切换到主菜单场景
 }
 
-void BirdLayer::menuCallbackItem2(Ref* pSender) {  // 暂停时切换到主菜单场景
+void BirdLayer::menuCallbackPauseToMain(Ref* pSender) {  // 暂停时切换到主菜单场景
   Director::getInstance()->resume();  // 恢复游戏
   sceneManager->goToMainScene();  // 切换到主菜单场景
 }
 //继续游戏按钮执行方法
-void BirdLayer::menuCallbackItem3(Ref* pSender) {  // 继续游戏
+void BirdLayer::menuCallbackResume(Ref* pSender) {  // 继续游戏
   stopFlag = false;  // 将暂停标志位设置为false
   this->removeChild(pauseBackground);  // 将暂停背景板从布景中移除
   pause->setTexture("button/pause.png");  // 替换暂停精灵图片
   Director::getInstance()->resume();  // 恢复游戏
 }
 //重新开始游戏按钮执行方法
-void BirdLayer::menuCallbackItem4(Ref* pSender) {  // 暂停时重新开始游戏
+void BirdLayer::menuCallbackPauseRestart(Ref* pSender) {  // 暂停时重新开始游戏
   Director::getInstance()->resume();  // 恢复游戏
   sceneManager->goToFlappyScene(1);  // 重新切换到游戏场景
 }

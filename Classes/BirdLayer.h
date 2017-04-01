@@ -54,11 +54,11 @@ public:
   int random();  // 生成随机数
   void update_column(float delta);  // 更新柱子
   void update_bird(float delta);  // 更新小鸟碰撞检测
-  void menuCallbackItem0(Ref* pSender);  // 重新开始游戏
-	void menuCallbackItem1(Ref* pSender);  // 切换到主菜单场景
-	void menuCallbackItem2(Ref* pSender);  // 暂停时切换到主菜单场景
-	void menuCallbackItem3(Ref* pSender);  // 继续游戏
-	void menuCallbackItem4(Ref* pSender);  // 暂停时重新开始游戏
+  void menuCallbackRestart(Ref* pSender);  // 重新开始游戏
+  void menuCallbackToMain(Ref* pSender);  // 切换到主菜单场景
+  void menuCallbackPauseToMain(Ref* pSender);  // 暂停时切换到主菜单场景
+  void menuCallbackResume(Ref* pSender);  // 继续游戏
+  void menuCallbackPauseRestart(Ref* pSender);  // 暂停时重新开始游戏
   void selectedEvent0(Ref* pSender, CheckBox::EventType type);  // 复选框事件回调方法
   void selectedEvent1(Ref* pSender, CheckBox::EventType type);  // 复选框事件回调方法
   bool onTouchBegan(Touch* touch, Event* event);  // 开始触控事件
