@@ -75,40 +75,40 @@ int MainLayer::random() {  // 生成随机数
   int number = rand() % 4;  // 随机产生0~3的数
   return number;  // 将随机数返回
 }
-
+/*
 void MainLayer::initTitle() {  // 更新标题
   Sprite* title = Sprite::create("pic/title.png");  // 创建一个标题精灵对象
   title->setPosition(Vec2(270, 800));  // 设置标题精灵位置
   this->addChild(title, 10);  // 将标题精灵添加到布景中
   this->removeChild(effectNode);  // 移除网络节点对象
 }
-
+*/
 void MainLayer::menuCallBack0(Ref* pSender) {  // 切换到选择游戏场景的菜单项回调方法
-  initTitle();  // 更新标题
+  //initTitle();  // 更新标题
   sceneManager->goToGameScene();  // 切换到选择游戏场景
 }
 
 void MainLayer::menuCallBack1(Ref* pSender) {  // 切换到排行榜场景的菜单项回调方法
-  initTitle();  // 更新标题
+  //initTitle();  // 更新标题
   sceneManager->goToRankBirdScene();  // 切换到排行榜场景
 }
 
 void MainLayer::menuCallBack2(Ref* pSender) {  // 切换到游戏设置场景的菜单项回调方法
-  initTitle();  // 更新标题
+  //initTitle();  // 更新标题
   sceneManager->goToSetScene();  // 切换到游戏设置场景
 }
 
 void MainLayer::menuCallBack3(Ref* pSender) {  // 切换到游戏帮助场景的菜单项回调方法
-  initTitle();  // 更新标题
+  //initTitle();  // 更新标题
   sceneManager->goToHelpScene();  // 切换到游戏帮助场景
 }
 
 void MainLayer::menuCallBack4(Ref* pSender) {  // 切换到游戏关于场景的菜单项回调方法
-  initTitle();  // 更新标题
+  //initTitle();  // 更新标题
   sceneManager->goToAboutScene();  // 切换到游戏关于场景
 }
 
 void MainLayer::menuCallBack5(Ref* pSender) {  // 退出游戏的菜单项回调方法
-  initTitle();  // 更新标题
+  //initTitle();  // 更新标题
   Director::getInstance()->end();  // 退出游戏
 }

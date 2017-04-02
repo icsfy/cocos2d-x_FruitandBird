@@ -22,7 +22,7 @@ public:
   void menuCallBack3(Ref* pSender);  // 切换到游戏帮助场景
   void menuCallBack4(Ref* pSender);  // 切换到游戏关于场景
   void menuCallBack5(Ref* pSender);  // 退出游戏
-  void initTitle();  // 更新标题
+  //void initTitle();  // 更新标题
   CREATE_FUNC(MainLayer);
 };
 
