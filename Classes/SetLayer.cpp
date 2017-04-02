@@ -19,7 +19,7 @@ bool SetLayer::init() {
     Vec2(origin.x, origin.y + visibleSize.height - backGround->getContentSize().height)
   );  // 设置背景精灵对象的位置
   this->addChild(backGround, 0);  // 将背景精灵添加到布景中
-  
+
   Sprite* floor = Sprite::create("pic/floor.png");  // 创建地面精灵对象
   floor->setAnchorPoint(Vec2::ZERO);  //设置地面精灵锚点
   floor->setPosition(Vec2(origin.x, origin.y));  // 设置地面精灵对象位置
@@ -73,10 +73,11 @@ bool SetLayer::init() {
   title->setPosition(Vec2(270, 800));  // 设置标题精灵位置
   effectNode->addChild(title, 12);  // 将精灵添加到网络节点中
   Director::getInstance()->setDepthTest(false);  // 关闭深度检测
+/* ?? doesn't work ??
   effectNode->runAction(RepeatForever::create(
     Ripple3D::create(2.0f, Size(32, 24), Vec2(270, 800), 360, 2, 5)  // 3D水波涟漪特效
   ));
-
+*/
   return true;
 }
 

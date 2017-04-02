@@ -34,10 +34,11 @@ bool GameLayer::init() {
   title->setPosition(Vec2(270, 800));  // 设置标题精灵位置
   effectNode->addChild(title, 12);  // 将精灵添加到网络节点中
   Director::getInstance()->setDepthTest(false);  // 关闭深度检测
+/* ?? doesn't work ??
   effectNode->runAction(RepeatForever::create(
     Ripple3D::create(2.0f, Size(32, 24), Vec2(270, 800), 360, 2, 10)  // 3D水波涟漪特效
   ));
-
+*/
   auto birdItem = MenuItemImage::create(  // "进击的小鸟"菜单项
     "button/bird.png", "button/bird_off.png", CC_CALLBACK_1(GameLayer::menuCallBack0, this));
   birdItem->setPosition(Vec2(visibleSize.width/2 - 50, visibleSize.height/2 + 100));
