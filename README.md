@@ -22,4 +22,4 @@
   - [x] AboutLayer
   - [x] GameLayer
   - [x] BirdLayer
-  - [ ] FruitLayer
+  - [x] FruitLayer

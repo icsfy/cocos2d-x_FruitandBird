@@ -8,6 +8,7 @@
 #include "AboutLayer.h"
 #include "GameLayer.h"
 #include "BirdLayer.h"
+#include "FruitLayer.h"
 
 using namespace cocos2d;
 
@@ -41,7 +42,15 @@ void GameSceneManager::goToFlappyScene(int i) {  // 切换到"进击的小鸟"�
 }
 
 void GameSceneManager::goToSquishyScene(int i) {  // 切换到"水果大逃亡"游戏界面
-  /* code */
+  Director::getInstance()->setDepthTest(true);
+  fruitScene = Scene::create();
+  FruitLayer* layer = FruitLayer::create();
+  fruitScene->addChild(layer);
+  layer->sceneManager = this;
+  auto ss = TransitionFadeTR::create(1, fruitScene);
+  if (i == 1)
+    auto ss = TransitionFade::create(1, fruitScene);
+  Director::getInstance()->replaceScene(ss);  // 切换场景
 }
 
 void GameSceneManager::goToGameScene() {  // 切换到游戏选择界面
